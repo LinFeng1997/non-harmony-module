@@ -1,9 +1,9 @@
 //index.js
-'use strict';
+"use strict";
 
 function foo() {
     import("file-saver").then(module => {
-        console.log(module)
+        console.log("module:", module)
     })
 }
 

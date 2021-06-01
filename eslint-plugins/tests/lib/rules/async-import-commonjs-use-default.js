@@ -17,6 +17,16 @@ var rule = require("../../../lib/rules/async-import-commonjs-use-default"),
 // Tests
 //------------------------------------------------------------------------------
 
+RuleTester.setDefaultConfig({
+    parser: 'babel-eslint',
+    ecmaFeatures: {
+      ecmaVersion: 6,
+      ecmaFeatures: {
+        dynamicImport: true
+      }
+    }
+  });
+
 var ruleTester = new RuleTester();
 ruleTester.run("async-import-commonjs-use-default", rule, {
 
@@ -27,7 +37,11 @@ ruleTester.run("async-import-commonjs-use-default", rule, {
 
     invalid: [
         {
-            code: `const module = await import("file-saver");`,
+            code: `
+            async function fn() {
+                const module = await import("file-saver");
+            }
+            `,
             errors: [{
                 message: "Fill me in.",
                 type: "Me too"

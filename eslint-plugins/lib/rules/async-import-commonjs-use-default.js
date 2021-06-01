@@ -22,7 +22,7 @@ module.exports = {
     },
 
     create: function(context) {
-        console.log("context",context)
+        console.log("context: ",context)
         // variables should be defined here
 
         //----------------------------------------------------------------------

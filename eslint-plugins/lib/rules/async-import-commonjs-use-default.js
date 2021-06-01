@@ -4,6 +4,8 @@
  */
 "use strict";
 
+// const { ESLintUtils } = require("@typescript-eslint/experimental-utils");
+
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
@@ -22,7 +24,6 @@ module.exports = {
     },
 
     create: function(context) {
-        console.log("context: ",context)
         // variables should be defined here
 
         //----------------------------------------------------------------------
@@ -34,11 +35,15 @@ module.exports = {
         //----------------------------------------------------------------------
         // Public
         //----------------------------------------------------------------------
-
+        
         return {
-
             // give me methods
+            ImportExpression : (node) => {
+                debugger
+                // const { program, esTreeNodeToTSNodeMap } = ESLintUtils.getParserServices(context);
 
+                console.log('ImportExpression value',node.source.value)
+            },
         };
     }
 };

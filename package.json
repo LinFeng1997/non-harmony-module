@@ -8,11 +8,12 @@
     "mocha": "^8.0.1",
     "webpack": "^5.26.0",
     "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "eslint-plugin-async-commonjs-use-default":"file:eslint-plugins"
   },
   "scripts": {
     "build": "npx webpack --config webpack.config.js",
-    "lint": "eslint",
+    "lint": "eslint --fix",
     "test": "mocha"
   }
 }
